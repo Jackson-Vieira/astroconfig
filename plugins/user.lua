@@ -1,12 +1,13 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
+ { "andweeb/presence.nvim", lazy=false}, 
+ { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+ { "ThePrimeagen/vim-be-good", cmd = { "VimBeGood" }},
+ {
+   "zbirenbaum/copilot.lua",
+   cmd = "Copilot",
+   event = "InsertEnter",
+   config = function()
+     require("copilot").setup(require("user.plugins.configs.copilot"))
+   end,
+ }
 }
